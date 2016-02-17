@@ -1,0 +1,32 @@
+<template name="Card">
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <h4 class="pull-right">R${{this.value}}</h4>
+                <h4><a href="#">{{this.title}}</a>
+                </h4>
+                <p>{{this.content}}</p>
+            </div>
+            <div class="ratings">
+                <p class="pull-left">{{_ "card-user"}}&nbsp;&nbsp;</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+            <div class="interest">
+                {{#if currentUser}}
+                    {{#if showInterestBtns}}
+                        <button type="button" class="btn btn-primary interest-btn-web interest-yes">{{_ "card-yes-btn"}}</button>
+                        <button type="button" class="btn btn-primary interest-btn-web interest-no">{{_ "card-no-btn"}}</button>
+                    {{else}}
+                        <p><b>{{_ "your-ad"}}</b></p>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>

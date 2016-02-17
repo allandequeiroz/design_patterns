@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS `meteormysql`;
+USE `meteormysql`;
+
+CREATE TABLE IF NOT EXISTS `clicks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `counter` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;

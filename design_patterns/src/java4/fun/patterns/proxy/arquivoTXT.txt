@@ -1,0 +1,5 @@
+Esse é um exemplo de um conteudo de um arquivo.
+Testes de pattern Proxy.
+Enjoy.
+
+

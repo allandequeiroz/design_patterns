@@ -1,0 +1,9 @@
+<template name="Interesting">
+    <div class="row">
+        {{#if isReady "interesting"}}
+            {{#each getInteresting}}
+                {{> InterestingCard}}
+            {{/each}}
+        {{/if}}
+    </div>
+</template>

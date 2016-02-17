@@ -1,0 +1,68 @@
+<head>
+  <title>The House-Sitter</title>
+</head>
+
+<body>
+  <h1>The House-Sitter</h1>
+  {{> selectHouse}}
+  {{> showHouse}}
+  {{> houseForm selectedHouse}}
+</body>
+
+<template name="selectHouse">
+    <select id="selectHouse">
+        <option value="" {{isSelected}}></option>
+        {{#each houseNameId}}
+          <option value="{{_id}}" {{isSelected}}>{{name}}</option>
+        {{/each}}
+    </select>
+</template>
+
+<template name="showHouse">
+    {{#with selectedHouse}}
+      <h2>Taking care of  {{name}}'s house</h2>
+      {{#if edited}}
+        <p>There are unsaved changes!</p>
+      {{/if}}
+      <p>Last visit: {{lastvisit}}</p>
+      {{#each plants}}
+        {{> plantDetails}}
+      {{/each}}
+      <button id="delete" data-id="{{_id}}">Delete this house</button>
+    {{else}}
+    {{/with}}
+</template>
+
+<template name="plantDetails">
+    <p><strong>Plant color:</strong> {{color}}</p>
+    <p>
+      <strong>Instructions:</strong> {{instructions}}
+      <button class="water" data-id="{{../_id}}-{{color}}" {{isWatered}}>Done</button>
+    </p>
+</template>
+
+<template name="houseForm">
+    <h3>Edit {{name}}'s house</h3>
+    <form id="houseForm">
+        <fieldset id="house-name">
+          Name <input class="name" type="text" placeholder="Name">
+          <br>
+        </fieldset>
+          <label>Plants</label>
+          {{#each withIndex plants}}
+            {{> plantFieldset}}
+          {{/each}}
+          <button class="addPlant">Add Plant</button>
+          <br>
+          <button id="saveHouse">Save House</button>
+    </form>
+</template>
+
+<template name="plantFieldset">
+    <fieldset id="plant-{{index}}">
+        Color <input class="color" type="text" value="{{color}}" data-index="{{index}}">
+        Instructions <input class="instructions" type="text"
+                            value="{{instructions}}" data-index="{{index}}">
+        <button class="removePlant">Remove plant</button>
+    </fieldset>
+</template>

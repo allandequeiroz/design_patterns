@@ -1,0 +1,78 @@
+<template name="Navbar">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">{{_ "app-title"}}</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            {{#if isDesktop}}
+                {{> NavbarDesktop}}
+            {{else}}
+                {{> NavbarMobile}}
+            {{/if}}
+        </div>
+      </nav>
+</template>
+
+<template name="NavbarMobile">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            {{#if currentUser}}
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse" href="/ad">{{_ "menu-annouce"}}</a>
+                </li>
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse" href="/myads">{{_ "menu-my-annouces"}}</a>
+                </li>
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse" href="/interesting">{{_ "my-interestings"}}</a>
+                </li>
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse" href="/profile">{{_ "menu-profile"}}</a>
+                </li>
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse" class="logout">{{_ "menu-logout"}}</a>
+                </li>
+            {{else}}
+                <li>
+                    <a data-toggle="collapse" data-target=".navbar-collapse" href="/login">{{_ "menu-login"}}</a>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+</template>
+
+<template name="NavbarDesktop">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            {{#if currentUser}}
+                <li>
+                    <a href="/ad">{{_ "menu-annouce"}}</a>
+                </li>
+                <li>
+                    <a href="/myads">{{_ "menu-my-annouces"}}</a>
+                </li>
+                <li>
+                    <a href="/interesting">{{_ "my-interestings"}}</a>
+                </li>
+                <li>
+                    <a href="/profile">{{_ "menu-profile"}}</a>
+                </li>
+                <li>
+                    <a class="logout">{{_ "menu-logout"}}</a>
+                </li>
+            {{else}}
+                <li>
+                    <a href="/login">{{_ "menu-login"}}</a>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+</template>

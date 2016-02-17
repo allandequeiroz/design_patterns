@@ -1,0 +1,34 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+email
+spiderable
+natestrauser:font-awesome
+meteorhacks:cluster
+meteorhacks:kadira-debug
+meteorhacks:kadira
+accounts-password
+underscore
+accounts-google
+accounts-facebook
+accounts-twitter
+meteorhacks:flow-layout
+meteorhacks:fast-render
+meteorhacks:flow-router
+mondora:connect-with
+alanning:roles
+msavin:mongol
+momentjs:moment
+mizzao:bootstrap-3
+service-configuration
+mquandalle:jade
+mystor:device-detection
+juliancwirko:s-alert
+juliancwirko:s-alert-bouncyflip
+bigdsk:inputmask
+http
+tap:i18n

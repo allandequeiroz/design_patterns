@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id="myJob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+    <step id="myStep" >
+        <chunk item-count="3">
+            <reader ref="myItemReader">
+                <properties>
+                    <property name="start" value="#{partitionPlan['start']}"  />
+                    <property name="end" value="#{partitionPlan['end']}"  />
+                </properties>                
+            </reader> 
+            <processor ref="myItemProcessor"/>
+            <writer ref="myItemWriter"/>
+        </chunk>
+        <partition>
+            <mapper ref="myMapper"/>
+            <reducer ref="myReducer"/>
+<!--            <collector ref="myCollector"/>
+            <analyzer ref="myAnalyzer"/>-->
+        </partition>
+    </step>
+</job>
+

@@ -1,0 +1,28 @@
+<template name="InterestingCard">
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail" style="overflow: visible;">
+            {{#if hasInteresting}}
+                <button type="button" class="btn btn-danger btn-circle btn-interesting"><i class="fa fa-trophy fa-2x"></i></button>
+            {{/if}}
+            <div class="caption">
+                <h4 class="pull-right">{{_ "mycard-currency"}}{{this.value}}</h4>
+                <h4><a href="#">{{this.title}}</a>
+                </h4>
+                <p>{{this.content}}</p>
+            </div>
+            <div class="ratings" style="vertical-align: bottom">
+                <p class="pull-left">{{_ "card-user"}}&nbsp;&nbsp;</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+            <div class="interest">
+                <button type="button" class="btn btn-primary interest-btn-web mycard-details">{{_ "my-interestings-remove"}}</button>
+            </div>
+        </div>
+    </div>
+</template>

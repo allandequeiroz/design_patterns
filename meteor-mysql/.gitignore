@@ -1,0 +1,13 @@
+node_modules
+packages
+.meteor/local
+.meteor/meteorite
+.DS_Store
+*.orig
+.idea/
+*.iml
+*.ipr
+*iws
+npm-debug.log
+tests/jasmine/server/unit/package-stubs.js
+tests/jasmine/server/unit/packageMocksSpec.js

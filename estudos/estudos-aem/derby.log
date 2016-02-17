@@ -1,0 +1,30 @@
+----------------------------------------------------------------
+2016-02-17 15:31:04.218 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0152-efdb-2b22-00000cc844e0
+on database directory /Users/allanqueiroz/devtools/private/allan/estudos-aem/repository/version/db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-02-17 15:31:04.840 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 888c4022-0152-efdb-2b22-00000cc844e0
+on database directory /Users/allanqueiroz/devtools/private/allan/estudos-aem/repository/workspaces/default/db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-02-17 15:31:05.510 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance e1734037-0152-efdb-2b22-00000cc844e0
+on database directory /Users/allanqueiroz/devtools/private/allan/estudos-aem/repository/workspaces/security/db  
+
+Database Class Loader started - derby.database.classpath=''
+
+2016-02-17 15:31:05.897 GMT:
+Shutting down instance 888c4022-0152-efdb-2b22-00000cc844e0
+----------------------------------------------------------------
+
+2016-02-17 15:31:05.908 GMT:
+Shutting down instance e1734037-0152-efdb-2b22-00000cc844e0
+----------------------------------------------------------------
+
+2016-02-17 15:31:05.912 GMT:
+Shutting down instance a816c00e-0152-efdb-2b22-00000cc844e0
+----------------------------------------------------------------

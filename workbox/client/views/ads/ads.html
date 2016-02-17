@@ -1,0 +1,13 @@
+<template name="Ads">
+    <div class="row">
+        {{#if isReady "ignore"}}
+            {{#if isReady "ad"}}
+                {{#each getAds}}
+                    {{#if showAd}}
+                        {{> Card}}
+                    {{/if}}
+                {{/each}}
+            {{/if}}
+        {{/if}}
+    </div>
+</template>

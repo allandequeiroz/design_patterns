@@ -1,0 +1,62 @@
+<template name="AddressComponent">
+
+    <div class="div-endereco" hidden>
+        <div class="form-group col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="logradouro form-control" placeholder="{{_ "addr-route"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="bairro form-control" placeholder="{{_ "addr-neighborhood"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="numero form-control" placeholder="{{_ "addr-number"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="complemento form-control" placeholder="{{_ "addr-complement"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="cidade form-control" placeholder="{{_ "addr-city"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="estado form-control" placeholder="{{_ "addr-state"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="cep form-control" placeholder="{{_ "addr-postalCode"}}">
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12" hidden>
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="latitude form-control" placeholder="{{_ "addr-latitude"}}" hidden>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-xs-12" hidden>
+            <div class="input-group" >
+                <div class="input-group-addon"><i class="fa fa-map-marker fa-icon"></i></div>
+                <input type="text" class="longitude form-control" placeholder="{{_ "addr-longitude"}}" hidden>
+            </div>
+        </div>
+        <div class="form-group col-xs-12">
+            <button type="button" class="btn btn-default new-address">{{_ "addr-find-new"}}</button>
+        </div>
+    </div>
+</template>

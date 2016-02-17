@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="true">
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="RootConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%5level: [%thread] %class.%method.%line: %message%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="org.springframework.beans">
+        <level value="debug" />
+    </logger>
+
+    <logger name="org.springframework.transaction">
+        <level value="debug" />
+    </logger>
+
+    <logger name="org.springframework.orm.jdo.JdoTransactionManager">
+        <level value="debug" />
+    </logger>
+
+    <logger name="org.springframework.web.context.support.AnnotationConfigWebApplicationContext">
+        <level value="debug" />
+    </logger>
+
+    <!--
+        <logger name="com.google.appengine.repackaged.com.google.common.base.FinalizableReferenceQueue">
+            <level value="warn" />
+        </logger>
+    -->
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="RootConsoleAppender" />
+    </root>
+</configuration>
+
+
