@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+2016-02-24 17:18:24.233 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0153-1449-f38e-00000bfacea0
+on database directory /Users/allanqueiroz/devtools/allan/github/estudos/estudos-aem/aem-helloworld/jackrabbit/workspaces/default/db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-02-24 17:18:25.073 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 888c4022-0153-1449-f38e-00000bfacea0
+on database directory /Users/allanqueiroz/devtools/allan/github/estudos/estudos-aem/aem-helloworld/jackrabbit/workspaces/security/db  
+
+Database Class Loader started - derby.database.classpath=''
+
+2016-02-24 17:18:25.792 GMT:
+Shutting down instance a816c00e-0153-1449-f38e-00000bfacea0
+----------------------------------------------------------------
+
+2016-02-24 17:18:25.808 GMT:
+Shutting down instance 888c4022-0153-1449-f38e-00000bfacea0
+----------------------------------------------------------------

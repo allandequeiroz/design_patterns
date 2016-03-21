@@ -3,6 +3,9 @@ package common;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by @author <a href="mailto:allandequeiroz@gmail.com">Allan de Queiroz</a>
@@ -26,5 +29,9 @@ public interface Exercise {
     default File[] listFilesRecursively(String root){
         List<File> files = new FileUtils().listFilesRecurively(root);
         return files.toArray(new File[files.size()]);
+    }
+
+    default int[] randomNumbers(){
+        return new Random().ints().limit(10).toArray();
     }
 }

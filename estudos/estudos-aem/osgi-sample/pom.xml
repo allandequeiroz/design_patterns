@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.azeckoski.osgi</groupId>
+    <artifactId>sample</artifactId>
+    <packaging>bundle</packaging>
+    <name>Sample OSGi bundle</name>
+    <version>1.1</version>
+    <description>A sample bundle to demonstrate OSGi</description>
+    <dependencies>
+        <!-- OSGi -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi_R4_core</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi_R4_compendium</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Activator>org.azeckoski.osgi.SampleActivator</Bundle-Activator>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- define source code repository location -->
+    <scm>
+        <connection>scm:svn:https://source.sakaiproject.org/contrib/caret/osgi-sample/tags/sample-1.1</connection>
+        <developerConnection>scm:svn:https://source.sakaiproject.org/contrib/caret/osgi-sample/tags/sample-1.1</developerConnection>
+        <url>https://source.sakaiproject.org/viewsvn/caret/osgi-sample/?root=contrib/tags/sample-1.1?root=contrib</url>
+    </scm>
+</project>

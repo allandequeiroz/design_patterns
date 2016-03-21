@@ -1,0 +1,9 @@
+This is a sample OSGi bundle for demo (HelloWorld) purposes
+It will print out messages to the command line when starting and stopping.
+
+Build using maven 2:
+mvn clean install
+
+The bundle is in the target directory and you can then deploy it into an OSGi.
+
+Aaron Zeckoski (azeckoski@gmail.com)

@@ -1,0 +1,252 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>EB OSGi</name>
+    <groupId>org.sakaiproject.osgi</groupId>
+    <artifactId>eb</artifactId>
+    <version>1.0</version><!--eb-osgi.version-->
+    <packaging>pom</packaging>
+    <properties>
+        <eb.version>1.0.4</eb.version><!--eb.version-->
+        <jetty.version>6.1.11</jetty.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>full</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>eb-component</module>
+                <module>eb-webapp</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>tool</id>
+            <modules>
+                <module>eb-webapp</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>component</id>
+            <modules>
+                <module>eb-component</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <dependencies />
+
+    <build>
+        <plugins>
+            <!-- java 1.5 or higher -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.ops4j</groupId>
+                <artifactId>maven-pax-plugin</artifactId>
+                <version>1.4</version>
+                <configuration>
+                    <profiles>web</profiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.4</version>
+            </dependency>
+            <!-- OSGi -->
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi_R4_core</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi_R4_compendium</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.azeckoski</groupId>
+                <artifactId>osgi-utils</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <!-- EB stuff -->
+            <dependency>
+                <groupId>org.sakaiproject.entitybus</groupId>
+                <artifactId>entitybus-api</artifactId>
+                <version>${eb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sakaiproject.entitybus</groupId>
+                <artifactId>entitybus-impl</artifactId>
+                <version>${eb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sakaiproject.entitybus</groupId>
+                <artifactId>entitybus-rest</artifactId>
+                <version>${eb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sakaiproject.entitybus</groupId>
+                <artifactId>entitybus-mocks</artifactId>
+                <version>${eb.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sakaiproject.entitybus</groupId>
+                <artifactId>entitybus-utils</artifactId>
+                <version>${eb.version}</version>
+            </dependency>
+            <!-- logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>1.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>1.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.14</version>
+            </dependency>
+            <dependency>
+                <!-- needed to ensure that all JCL is 1.1.1 -->
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+            <!-- testing -->
+            <dependency>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-servlet-tester</artifactId>
+                <version>${jetty.version}</version>
+                <type>jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.2</version>
+                <type>jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.5</version>
+                <type>jar</type>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <developers>
+        <developer>
+            <id>aaronz@vt.edu</id>
+            <name>Aaron Zeckoski</name>
+            <email>aaron@caret.cam.ac.uk</email>
+            <url>http://confluence.sakaiproject.org/confluence/display/~aaronz</url>
+            <organization>CARET</organization>
+            <organizationUrl>http://www.caret.cam.ac.uk/</organizationUrl>
+            <roles>
+                <role>Project Manager</role>
+                <role>Architect</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>0</timezone>
+        </developer>
+    </developers>
+
+    <!-- ops4j repository -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ops4j.releases</id>
+            <url>http://repository.ops4j.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <repositories>
+        <repository>
+            <id>sakai-maven</id>
+            <name>Sakai Maven Repo</name>
+            <layout>default</layout>
+            <url>http://source.sakaiproject.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>default</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>Sakai-Maven2</id>
+            <name>Sakaiproject Maven 2 repository</name>
+            <url>dav:https://source.sakaiproject.org/maven2</url>
+        </repository>
+        <site>
+            <id>local site</id>
+            <url>file:/tmp/osgi-eb/site/</url>
+        </site>
+    </distributionManagement>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>http://jira.sakaiproject.org/jira/browse/SAK</url>
+    </issueManagement>
+    <licenses>
+        <license>
+            <name>Educational Community License, Version 2.0</name>
+            <url>http://www.osedu.org/licenses/ECL-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <!-- define source code repository location -->
+    <scm>
+        <connection>scm:svn:https://source.sakaiproject.org/contrib/caret/osgi-eb/tags/eb-1.0</connection>
+        <developerConnection>scm:svn:https://source.sakaiproject.org/contrib/caret/osgi-eb/tags/eb-1.0</developerConnection>
+        <url>https://source.sakaiproject.org/viewsvn/caret/osgi-eb/?root=contrib/tags/eb-1.0?root=contrib</url>
+    </scm>
+
+</project>
