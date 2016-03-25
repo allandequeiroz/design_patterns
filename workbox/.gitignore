@@ -1,8 +1,0 @@
-.meteor/local
-.meteor/meteorite
-.DS_Store
-*.orig
-.idea/
-*.iml
-*.ipr
-*iws

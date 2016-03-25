@@ -1,3 +1,0 @@
-<script>
-    alert('<%= currentNode.title %>')
-</script>

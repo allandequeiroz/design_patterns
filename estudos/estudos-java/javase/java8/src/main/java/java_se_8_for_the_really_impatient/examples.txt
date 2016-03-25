@@ -1,2 +1,0 @@
-https://github.com/galperin/Solutions-for-exercises-from-Java-SE-8-for-the-Really-Impatient-by-Horstmann/tree/master/src/main/java/de/galperin/javase8
-https://github.com/DanielChesters/java-SE-8-Really-Impatient/blob/master/src/main/java/org/danielchesters/javase8/Chapter1.java
